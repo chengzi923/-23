@@ -1,0 +1,25 @@
+// 示例博客数据
+const posts = [
+  {
+    title: "我的第一篇博客",
+    date: "2025-06-25",
+    summary: "这是我的第一篇博客文章，欢迎大家关注！",
+    url: "#"
+  },
+  {
+    title: "学习HTML+CSS+JS",
+    date: "2025-06-26",
+    summary: "今天开始学习如何用原生技术搭建个人博客。",
+    url: "#"
+  }
+];
+
+// 渲染博客文章列表
+const blogList = document.getElementById('blog-list');
+blogList.innerHTML = posts.map(post => `
+  <article class="post">
+    <h2><a href="${post.url}">${post.title}</a></h2>
+    <div class="date">${post.date}</div>
+    <p>${post.summary}</p>
+  </article>
+`).join('');
